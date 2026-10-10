@@ -1,0 +1,55 @@
+{
+  "name": "StaffApplication",
+  "type": "object",
+  "properties": {
+    "applicant_email": {
+      "type": "string"
+    },
+    "applicant_name": {
+      "type": "string"
+    },
+    "role": {
+      "type": "string",
+      "enum": [
+        "developer",
+        "tester",
+        "moderator"
+      ]
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "pending",
+        "accepted",
+        "denied",
+        "closed"
+      ],
+      "default": "pending"
+    },
+    "answers": {
+      "type": "object",
+      "description": "Map of question key -> answer string"
+    },
+    "admin_comments": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "author": {
+            "type": "string"
+          },
+          "text": {
+            "type": "string"
+          },
+          "timestamp": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  },
+  "required": [
+    "applicant_email",
+    "role"
+  ]
+}

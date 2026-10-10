@@ -1,0 +1,123 @@
+{
+  "name": "ServerMember",
+  "type": "object",
+  "properties": {
+    "server_id": {
+      "type": "string",
+      "description": "Reference to server"
+    },
+    "user_email": {
+      "type": "string"
+    },
+    "user_name": {
+      "type": "string"
+    },
+    "role": {
+      "type": "string",
+      "enum": [
+        "owner",
+        "admin",
+        "moderator",
+        "member"
+      ],
+      "default": "member"
+    },
+    "department_type": {
+      "type": "string",
+      "enum": [
+        "police",
+        "fire",
+        "ems",
+        "dispatch"
+      ],
+      "description": "Active department"
+    },
+    "callsign": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "10-8",
+        "10-7",
+        "10-6",
+        "10-42",
+        "10-97",
+        "10-11"
+      ],
+      "default": "10-42"
+    },
+    "dept_keys": {
+      "type": "object",
+      "properties": {
+        "police": {
+          "type": "boolean",
+          "default": false
+        },
+        "fire": {
+          "type": "boolean",
+          "default": false
+        },
+        "ems": {
+          "type": "boolean",
+          "default": false
+        },
+        "dispatch": {
+          "type": "boolean",
+          "default": false
+        }
+      }
+    },
+    "training_assigned": {
+      "type": "object",
+      "properties": {
+        "police": {
+          "type": "boolean",
+          "default": false
+        },
+        "fire": {
+          "type": "boolean",
+          "default": false
+        },
+        "ems": {
+          "type": "boolean",
+          "default": false
+        },
+        "dispatch": {
+          "type": "boolean",
+          "default": false
+        }
+      }
+    },
+    "permissions": {
+      "type": "object",
+      "description": "Granular permissions for advanced features",
+      "properties": {
+        "view_safety_alerts": {
+          "type": "boolean",
+          "default": true,
+          "description": "Can view Officer Safety Alerts on database records"
+        },
+        "manage_safety_alerts": {
+          "type": "boolean",
+          "default": false,
+          "description": "Can add, remove, and edit Officer Safety Alerts"
+        },
+        "access_crash_reconstruction": {
+          "type": "boolean",
+          "default": false,
+          "description": "Can access the Crash Reconstruction tool"
+        },
+        "edit_crash_reconstructions": {
+          "type": "boolean",
+          "default": false,
+          "description": "Can edit existing Crash Reconstructions"
+        }
+      }
+    }
+  },
+  "required": [
+    "server_id",
+    "user_email"
+  ]
+}

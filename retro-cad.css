@@ -1,0 +1,179 @@
+/* ===== Retro CAD Theme (Early 2000s — Dark) ===== */
+/* Applied when server.ui_theme === 'retro' via .cad-retro wrapper */
+
+.cad-retro {
+  --retro-bg: #1a1a1a;
+  --retro-face: #2d2d2d;
+  --retro-face-dark: #252525;
+  --retro-shadow-dark: #0a0a0a;
+  --retro-shadow-light: #3d3d3d;
+  --retro-title: #0d1b3a;
+  --retro-title-grad-start: #0d1b3a;
+  --retro-title-grad-end: #1a3a6a;
+  --retro-text: #d4d4d4;
+  --retro-text-dim: #888888;
+  --retro-border: #404040;
+  --retro-accent: #4a6a9a;
+  --retro-link: #6a8afe;
+  --retro-window: #2d2d2d;
+  --retro-input-bg: #1e1e1e;
+}
+
+.cad-retro * {
+  font-family: 'Tahoma', 'Verdana', 'MS Sans Serif', sans-serif !important;
+  border-radius: 0 !important;
+}
+
+.cad-retro body, .cad-retro .retro-root {
+  background: var(--retro-bg) !important;
+  color: var(--retro-text) !important;
+}
+
+/* Beveled panels (classic 3D borders — dark) */
+.cad-retro .retro-panel {
+  background: var(--retro-face);
+  border: 2px solid;
+  border-color: var(--retro-shadow-light) var(--retro-shadow-dark) var(--retro-shadow-dark) var(--retro-shadow-light);
+  box-shadow: inset 1px 1px 0 var(--retro-face-dark), inset -1px -1px 0 var(--retro-shadow-dark);
+}
+
+/* Inset (sunken) fields */
+.cad-retro .retro-inset {
+  background: var(--retro-input-bg);
+  border: 2px solid;
+  border-color: var(--retro-shadow-dark) var(--retro-shadow-light) var(--retro-shadow-light) var(--retro-shadow-dark);
+  color: var(--retro-text);
+}
+
+/* Title bar — dark navy gradient */
+.cad-retro .retro-titlebar {
+  background: linear-gradient(90deg, var(--retro-title-grad-start), var(--retro-title-grad-end)) !important;
+  color: #ffffff !important;
+  font-weight: bold;
+  padding: 3px 6px;
+  font-size: 11px;
+  border-bottom: 1px solid var(--retro-shadow-dark);
+}
+
+/* Buttons — dark beveled */
+.cad-retro .retro-btn {
+  background: var(--retro-face);
+  border: 2px solid;
+  border-color: var(--retro-shadow-light) var(--retro-shadow-dark) var(--retro-shadow-dark) var(--retro-shadow-light);
+  padding: 3px 12px;
+  font-size: 11px;
+  color: var(--retro-text);
+  cursor: pointer;
+  min-width: 60px;
+}
+.cad-retro .retro-btn:hover {
+  background: #333333;
+}
+.cad-retro .retro-btn:active {
+  border-color: var(--retro-shadow-dark) var(--retro-shadow-light) var(--retro-shadow-light) var(--retro-shadow-dark);
+  background: var(--retro-face-dark);
+}
+
+/* Status bar */
+.cad-retro .retro-statusbar {
+  background: var(--retro-face);
+  border-top: 2px solid;
+  border-color: var(--retro-shadow-light) var(--retro-shadow-dark) var(--retro-shadow-dark) var(--retro-shadow-light);
+  padding: 2px 6px;
+  font-size: 11px;
+  color: var(--retro-text-dim);
+}
+
+/* Nav tabs (classic folder tabs — dark) */
+.cad-retro .retro-tab {
+  background: var(--retro-face-dark);
+  border: 2px solid;
+  border-color: var(--retro-shadow-dark) var(--retro-shadow-light) var(--retro-face) var(--retro-shadow-light);
+  border-bottom: none;
+  padding: 4px 12px;
+  font-size: 11px;
+  color: var(--retro-text-dim);
+  cursor: pointer;
+  position: relative;
+  top: 2px;
+}
+.cad-retro .retro-tab:hover {
+  color: var(--retro-text);
+}
+.cad-retro .retro-tab-active {
+  background: var(--retro-face);
+  z-index: 2;
+  font-weight: bold;
+  color: var(--retro-text);
+}
+
+/* Links */
+.cad-retro .retro-link {
+  color: var(--retro-link);
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+/* Table grid — dark */
+.cad-retro .retro-grid {
+  background: var(--retro-input-bg);
+  border: 2px solid;
+  border-color: var(--retro-shadow-dark) var(--retro-shadow-light) var(--retro-shadow-light) var(--retro-shadow-dark);
+}
+.cad-retro .retro-grid-header {
+  background: var(--retro-face);
+  font-weight: bold;
+  font-size: 11px;
+  color: var(--retro-text);
+  border-bottom: 2px solid var(--retro-shadow-dark);
+}
+
+/* Blinking cursor effect */
+@keyframes retro-blink {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0; }
+}
+.cad-retro .retro-blink {
+  animation: retro-blink 1s step-end infinite;
+}
+
+/* LED-style status indicator */
+.cad-retro .retro-led {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: 1px solid #1a1a1a;
+  display: inline-block;
+}
+.cad-retro .retro-led-on {
+  background: #00cc00;
+  box-shadow: 0 0 4px #00cc00;
+}
+.cad-retro .retro-led-off {
+  background: #330000;
+}
+
+/* Override glass/glass-strong in retro mode for consistency */
+.cad-retro .glass, .cad-retro .glass-strong {
+  background: var(--retro-face) !important;
+  backdrop-filter: none !important;
+  border: 2px solid !important;
+  border-color: var(--retro-shadow-light) var(--retro-shadow-dark) var(--retro-shadow-dark) var(--retro-shadow-light) !important;
+}
+
+/* Inputs in retro mode */
+.cad-retro input, .cad-retro textarea, .cad-retro select {
+  background: var(--retro-input-bg) !important;
+  border: 2px solid !important;
+  border-color: var(--retro-shadow-dark) var(--retro-shadow-light) var(--retro-shadow-light) var(--retro-shadow-dark) !important;
+  color: var(--retro-text) !important;
+  border-radius: 0 !important;
+}
+
+/* Text colors in retro mode */
+.cad-retro .text-white { color: var(--retro-text) !important; }
+.cad-retro .text-white\/40 { color: var(--retro-text-dim) !important; }
+.cad-retro .text-white\/30 { color: #666666 !important; }
+.cad-retro .text-crimson { color: #cc4444 !important; }
+.cad-retro .bg-crimson { background: #8b0000 !important; }
+.cad-retro .border-crimson { border-color: #8b0000 !important; }

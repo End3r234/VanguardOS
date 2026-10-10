@@ -1,0 +1,92 @@
+{
+  "name": "Unit",
+  "type": "object",
+  "properties": {
+    "server_id": {
+      "type": "string"
+    },
+    "user_email": {
+      "type": "string"
+    },
+    "callsign": {
+      "type": "string"
+    },
+    "rp_name": {
+      "type": "string",
+      "description": "Roleplay name of the officer/unit"
+    },
+    "rank": {
+      "type": "string",
+      "description": "Officer rank, e.g. Officer, Detective, Sergeant"
+    },
+    "subdivision": {
+      "type": "string",
+      "description": "Subdivision assignment, e.g. K9, SWAT, Traffic"
+    },
+    "department_type": {
+      "type": "string",
+      "enum": [
+        "police",
+        "fire",
+        "ems",
+        "dispatch"
+      ]
+    },
+    "department_name": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "10-8",
+        "10-7",
+        "10-6",
+        "10-42",
+        "10-97",
+        "10-11",
+        "10-23"
+      ],
+      "default": "10-8"
+    },
+    "assigned_call_id": {
+      "type": "string"
+    },
+    "incident_id": {
+      "type": "string",
+      "description": "Incident ID this unit is currently assigned to (persists after call closes for history)"
+    },
+    "vehicle": {
+      "type": "string"
+    },
+    "location": {
+      "type": "string"
+    },
+    "on_duty_since": {
+      "type": "string",
+      "description": "ISO timestamp when unit went on duty"
+    },
+    "map_x_pct": {
+      "type": "number",
+      "description": "Unit X position on map as percentage (0-100)"
+    },
+    "map_y_pct": {
+      "type": "number",
+      "description": "Unit Y position on map as percentage (0-100)"
+    },
+    "map_updated_at": {
+      "type": "string",
+      "description": "ISO timestamp of last map position update"
+    },
+    "location_reminder_ignores": {
+      "type": "number",
+      "default": 0,
+      "description": "Number of times unit has ignored a location update reminder"
+    }
+  },
+  "required": [
+    "server_id",
+    "user_email",
+    "callsign",
+    "department_type"
+  ]
+}

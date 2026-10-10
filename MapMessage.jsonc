@@ -1,0 +1,41 @@
+{
+  "name": "MapMessage",
+  "type": "object",
+  "properties": {
+    "server_id": {
+      "type": "string",
+      "description": "Reference to server"
+    },
+    "from_email": {
+      "type": "string",
+      "description": "Sender email (dispatcher)"
+    },
+    "from_name": {
+      "type": "string",
+      "description": "Sender display name"
+    },
+    "to_email": {
+      "type": "string",
+      "description": "Recipient email (unit member)"
+    },
+    "to_name": {
+      "type": "string",
+      "description": "Recipient display name"
+    },
+    "body": {
+      "type": "string",
+      "description": "Message content"
+    },
+    "read": {
+      "type": "boolean",
+      "default": false,
+      "description": "Whether the recipient has read the message"
+    }
+  },
+  "required": [
+    "server_id",
+    "from_email",
+    "to_email",
+    "body"
+  ]
+}

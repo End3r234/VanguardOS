@@ -1,0 +1,62 @@
+{
+  "name": "UserCertification",
+  "type": "object",
+  "properties": {
+    "user_email": {
+      "type": "string"
+    },
+    "server_id": {
+      "type": "string"
+    },
+    "police_key": {
+      "type": "boolean",
+      "default": false
+    },
+    "fire_key": {
+      "type": "boolean",
+      "default": false
+    },
+    "ems_key": {
+      "type": "boolean",
+      "default": false
+    },
+    "dispatch_key": {
+      "type": "boolean",
+      "default": false
+    },
+    "leo_tier": {
+      "type": "number",
+      "default": 0
+    },
+    "fire_tier": {
+      "type": "number",
+      "default": 0
+    },
+    "dispatch_tier": {
+      "type": "number",
+      "default": 0
+    },
+    "leo_progress": {
+      "type": "number",
+      "default": 0
+    },
+    "fire_progress": {
+      "type": "number",
+      "default": 0
+    },
+    "dispatch_progress": {
+      "type": "number",
+      "default": 0
+    },
+    "last_failed_attempt": {
+      "type": "string"
+    },
+    "failed_dept": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "user_email",
+    "server_id"
+  ]
+}

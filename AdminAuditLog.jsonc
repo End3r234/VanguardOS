@@ -1,0 +1,26 @@
+{
+  "name": "AdminAuditLog",
+  "type": "object",
+  "properties": {
+    "server_id": {
+      "type": "string"
+    },
+    "admin_email": {
+      "type": "string"
+    },
+    "action": {
+      "type": "string"
+    },
+    "target_email": {
+      "type": "string"
+    },
+    "details": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "server_id",
+    "admin_email",
+    "action"
+  ]
+}

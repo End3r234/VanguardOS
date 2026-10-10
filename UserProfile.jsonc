@@ -1,0 +1,60 @@
+{
+  "name": "UserProfile",
+  "type": "object",
+  "properties": {
+    "user_email": {
+      "type": "string"
+    },
+    "display_name": {
+      "type": "string"
+    },
+    "avatar_url": {
+      "type": "string"
+    },
+    "banner_url": {
+      "type": "string"
+    },
+    "bio": {
+      "type": "string"
+    },
+    "badge": {
+      "type": "string"
+    },
+    "accent_color": {
+      "type": "string",
+      "default": "#CE0000"
+    },
+    "global_role": {
+      "type": "string",
+      "enum": [
+        "user",
+        "moderator",
+        "admin",
+        "developer",
+        "global_mod",
+        "cad_moderator",
+        "owner",
+        "community_manager"
+      ],
+      "default": "user"
+    },
+    "platform_badges": {
+      "type": "array",
+      "description": "Granted platform-level badges",
+      "items": {
+        "type": "string"
+      }
+    },
+    "total_hours": {
+      "type": "number",
+      "default": 0
+    },
+    "servers_joined": {
+      "type": "number",
+      "default": 0
+    }
+  },
+  "required": [
+    "user_email"
+  ]
+}

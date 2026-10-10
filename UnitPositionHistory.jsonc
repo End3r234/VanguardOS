@@ -1,0 +1,46 @@
+{
+  "name": "UnitPositionHistory",
+  "type": "object",
+  "properties": {
+    "server_id": {
+      "type": "string",
+      "description": "Reference to server"
+    },
+    "unit_id": {
+      "type": "string",
+      "description": "Reference to the Unit record"
+    },
+    "user_email": {
+      "type": "string"
+    },
+    "callsign": {
+      "type": "string"
+    },
+    "department_type": {
+      "type": "string",
+      "enum": [
+        "police",
+        "fire",
+        "ems",
+        "dispatch"
+      ]
+    },
+    "x_pct": {
+      "type": "number",
+      "description": "X position on map as percentage (0-100)"
+    },
+    "y_pct": {
+      "type": "number",
+      "description": "Y position on map as percentage (0-100)"
+    },
+    "location": {
+      "type": "string",
+      "description": "Nearest postal/street or area name"
+    }
+  },
+  "required": [
+    "server_id",
+    "unit_id",
+    "user_email"
+  ]
+}

@@ -1,0 +1,51 @@
+{
+  "name": "OfficerSafetyAlert",
+  "type": "object",
+  "properties": {
+    "server_id": {
+      "type": "string",
+      "description": "Reference to server"
+    },
+    "record_type": {
+      "type": "string",
+      "enum": [
+        "civilian",
+        "vehicle",
+        "address"
+      ],
+      "description": "Type of record this alert is attached to"
+    },
+    "record_id": {
+      "type": "string",
+      "description": "ID of the referenced record (Civilian entity ID for civilians/vehicles, or address string for addresses)"
+    },
+    "record_identifier": {
+      "type": "string",
+      "description": "Human-readable identifier: person name, plate number, or address"
+    },
+    "alert_type": {
+      "type": "string",
+      "description": "Type of safety alert, e.g. Known to Carry Weapons, History of Violence"
+    },
+    "notes": {
+      "type": "string",
+      "description": "Internal notes explaining why the alert exists"
+    },
+    "added_by_email": {
+      "type": "string"
+    },
+    "added_by_name": {
+      "type": "string"
+    },
+    "is_active": {
+      "type": "boolean",
+      "default": true
+    }
+  },
+  "required": [
+    "server_id",
+    "record_type",
+    "record_id",
+    "alert_type"
+  ]
+}

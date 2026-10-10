@@ -1,0 +1,26 @@
+{
+  "name": "EmailSubscriber",
+  "type": "object",
+  "properties": {
+    "server_id": {
+      "type": "string"
+    },
+    "email": {
+      "type": "string",
+      "description": "Subscriber email address \u2014 never shown to other users"
+    },
+    "subscribed_by_email": {
+      "type": "string",
+      "description": "The user email who subscribed"
+    },
+    "label": {
+      "type": "string",
+      "description": "Optional display label (e.g. department name) shown only to the subscriber themselves"
+    }
+  },
+  "required": [
+    "server_id",
+    "email",
+    "subscribed_by_email"
+  ]
+}

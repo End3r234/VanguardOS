@@ -1,0 +1,30 @@
+{
+  "name": "CustomBadge",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "icon": {
+      "type": "string",
+      "description": "Emoji or short symbol"
+    },
+    "color": {
+      "type": "string",
+      "default": "#CE0000"
+    },
+    "bg_color": {
+      "type": "string",
+      "default": "#1a0000"
+    },
+    "created_by": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "name"
+  ]
+}

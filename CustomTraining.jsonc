@@ -1,0 +1,62 @@
+{
+  "name": "CustomTraining",
+  "type": "object",
+  "properties": {
+    "server_id": {
+      "type": "string"
+    },
+    "department_type": {
+      "type": "string",
+      "enum": [
+        "police",
+        "fire",
+        "ems",
+        "dispatch"
+      ]
+    },
+    "title": {
+      "type": "string"
+    },
+    "tier_level": {
+      "type": "number",
+      "default": 1
+    },
+    "content_markdown": {
+      "type": "string",
+      "description": "Markdown content for the training module"
+    },
+    "exam_questions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "question": {
+            "type": "string"
+          },
+          "options": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "correct": {
+            "type": "number"
+          }
+        }
+      }
+    },
+    "passing_score": {
+      "type": "number",
+      "default": 80
+    },
+    "is_active": {
+      "type": "boolean",
+      "default": true
+    }
+  },
+  "required": [
+    "server_id",
+    "department_type",
+    "title"
+  ]
+}

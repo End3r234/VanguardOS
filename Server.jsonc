@@ -1,0 +1,250 @@
+{
+  "name": "Server",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "Server name"
+    },
+    "description": {
+      "type": "string"
+    },
+    "owner_email": {
+      "type": "string"
+    },
+    "icon_url": {
+      "type": "string"
+    },
+    "banner_url": {
+      "type": "string"
+    },
+    "invite_code": {
+      "type": "string"
+    },
+    "is_public": {
+      "type": "boolean",
+      "default": true
+    },
+    "dispatch_ai_enabled": {
+      "type": "boolean",
+      "default": false
+    },
+    "smart_report_builder": {
+      "type": "boolean",
+      "default": false,
+      "description": "Enable dynamic report form sections that adapt based on report type (traffic stop, arrest, fire, EMS, etc.)"
+    },
+    "officer_safety_enabled": {
+      "type": "boolean",
+      "default": false,
+      "description": "Enable the Officer Safety Alert system for this server"
+    },
+    "email_notifications_enabled": {
+      "type": "boolean",
+      "default": false,
+      "description": "Allow members to subscribe for session/training email notifications"
+    },
+    "live_map_enabled": {
+      "type": "boolean",
+      "default": false,
+      "description": "Enable the live dispatch map feature for this server"
+    },
+    "live_map_dms_enabled": {
+      "type": "boolean",
+      "default": false,
+      "description": "Allow dispatchers to DM members from the live map"
+    },
+    "live_map_preset": {
+      "type": "string",
+      "enum": [
+        "erlc",
+        "lossantos",
+        "custom",
+        "none"
+      ],
+      "default": "none",
+      "description": "Map preset: erlc = ER:LC, lossantos = Los Santos/GTA V, custom = uploaded map with AI-extracted data"
+    },
+    "unit_ping_interval": {
+      "type": "number",
+      "default": 120,
+      "description": "How often (in seconds) to prompt on-duty units to update their location"
+    },
+    "map_streets_data": {
+      "type": "array",
+      "description": "Street/postal data for custom map presets",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "postal": {
+            "type": "string"
+          },
+          "x_pct": {
+            "type": "number"
+          },
+          "y_pct": {
+            "type": "number"
+          }
+        }
+      }
+    },
+    "ui_theme": {
+      "type": "string",
+      "enum": [
+        "modern",
+        "retro",
+        "tactical",
+        "eoc",
+        "cyber",
+        "firstresponder"
+      ],
+      "default": "modern",
+      "description": "CAD interface theme: modern (default), retro (early 2000s), tactical (military command), eoc (emergency operations center, light), cyber (futuristic), firstresponder (department-based accent colors)"
+    },
+    "member_count": {
+      "type": "number",
+      "default": 0
+    },
+    "theme": {
+      "type": "string",
+      "enum": [
+        "dark",
+        "midnight",
+        "futuristic",
+        "light"
+      ],
+      "default": "dark"
+    },
+    "custom_bg_url": {
+      "type": "string"
+    },
+    "map_url": {
+      "type": "string",
+      "description": "Custom map image URL for the server"
+    },
+    "server_tier": {
+      "type": "string",
+      "enum": [
+        "free",
+        "premium"
+      ],
+      "default": "free"
+    },
+    "is_verified": {
+      "type": "boolean",
+      "default": false
+    },
+    "ems_sop_url": {
+      "type": "string",
+      "description": "EMS Scope of Practice / SOP document URL"
+    },
+    "tones": {
+      "type": "object",
+      "properties": {
+        "standard": {
+          "type": "object",
+          "properties": {
+            "name": {
+              "type": "string"
+            },
+            "sound": {
+              "type": "string"
+            }
+          }
+        },
+        "priority": {
+          "type": "object",
+          "properties": {
+            "name": {
+              "type": "string"
+            },
+            "sound": {
+              "type": "string"
+            }
+          }
+        },
+        "emergency": {
+          "type": "object",
+          "properties": {
+            "name": {
+              "type": "string"
+            },
+            "sound": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "departments": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "type": {
+            "type": "string",
+            "enum": [
+              "police",
+              "fire",
+              "ems",
+              "dispatch"
+            ]
+          },
+          "short_name": {
+            "type": "string"
+          },
+          "logo_url": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "penal_code": {
+      "type": "array",
+      "description": "Server penal code / charges",
+      "items": {
+        "type": "object",
+        "properties": {
+          "code": {
+            "type": "string"
+          },
+          "title": {
+            "type": "string"
+          },
+          "category": {
+            "type": "string"
+          },
+          "fine": {
+            "type": "number"
+          },
+          "jail": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "report_types": {
+      "type": "array",
+      "description": "Custom incident report types",
+      "items": {
+        "type": "string"
+      }
+    },
+    "tags": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "required": [
+    "name",
+    "owner_email"
+  ]
+}

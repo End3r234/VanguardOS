@@ -1,0 +1,115 @@
+{
+  "name": "Civilian",
+  "type": "object",
+  "properties": {
+    "server_id": {
+      "type": "string"
+    },
+    "user_email": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "dob": {
+      "type": "string"
+    },
+    "address": {
+      "type": "string"
+    },
+    "gender": {
+      "type": "string"
+    },
+    "occupation": {
+      "type": "string"
+    },
+    "phone": {
+      "type": "string"
+    },
+    "height": {
+      "type": "string"
+    },
+    "weight": {
+      "type": "string"
+    },
+    "eye_color": {
+      "type": "string"
+    },
+    "hair_color": {
+      "type": "string"
+    },
+    "ethnicity": {
+      "type": "string"
+    },
+    "drivers_license": {
+      "type": "string"
+    },
+    "dl_status": {
+      "type": "string",
+      "enum": [
+        "Valid",
+        "Suspended",
+        "Revoked",
+        "Expired",
+        "None"
+      ],
+      "default": "Valid"
+    },
+    "insurance": {
+      "type": "string"
+    },
+    "emergency_contact": {
+      "type": "string"
+    },
+    "nationality": {
+      "type": "string"
+    },
+    "license_plates": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "plate": {
+            "type": "string"
+          },
+          "state": {
+            "type": "string"
+          },
+          "make": {
+            "type": "string"
+          },
+          "model": {
+            "type": "string"
+          },
+          "color": {
+            "type": "string"
+          },
+          "year": {
+            "type": "string"
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "Valid",
+              "Stolen",
+              "Expired",
+              "Suspended"
+            ],
+            "default": "Valid"
+          }
+        }
+      }
+    },
+    "flags": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "required": [
+    "server_id",
+    "user_email",
+    "name"
+  ]
+}

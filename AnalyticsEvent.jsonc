@@ -1,0 +1,29 @@
+{
+  "name": "AnalyticsEvent",
+  "type": "object",
+  "properties": {
+    "event_name": {
+      "type": "string",
+      "description": "Name of the tracked event"
+    },
+    "event_category": {
+      "type": "string",
+      "enum": [
+        "page_view",
+        "feature_use",
+        "module_view",
+        "ai_use",
+        "setting_change"
+      ],
+      "description": "Category of the event"
+    },
+    "properties": {
+      "type": "object",
+      "properties": {},
+      "description": "Additional event properties (page path, feature name, etc.)"
+    }
+  },
+  "required": [
+    "event_name"
+  ]
+}

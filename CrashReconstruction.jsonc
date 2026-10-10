@@ -1,0 +1,59 @@
+{
+  "name": "CrashReconstruction",
+  "type": "object",
+  "properties": {
+    "server_id": {
+      "type": "string"
+    },
+    "report_id": {
+      "type": "string",
+      "description": "Linked IncidentReport ID"
+    },
+    "incident_id": {
+      "type": "string",
+      "description": "Linked incident ID"
+    },
+    "title": {
+      "type": "string",
+      "description": "Reconstruction title/summary"
+    },
+    "canvas_data": {
+      "type": "object",
+      "description": "JSON of all canvas objects, road template, and scene state",
+      "properties": {}
+    },
+    "weather": {
+      "type": "string",
+      "enum": [
+        "clear",
+        "rain",
+        "snow",
+        "fog",
+        "storm"
+      ]
+    },
+    "road_condition": {
+      "type": "string",
+      "enum": [
+        "dry",
+        "wet",
+        "icy",
+        "snowy",
+        "gravel"
+      ]
+    },
+    "export_png_url": {
+      "type": "string",
+      "description": "URL to the exported PNG image"
+    },
+    "created_by_email": {
+      "type": "string"
+    },
+    "created_by_callsign": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "server_id"
+  ]
+}

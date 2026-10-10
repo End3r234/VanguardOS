@@ -1,0 +1,28 @@
+{
+  "name": "ProfileReview",
+  "type": "object",
+  "properties": {
+    "reviewed_email": {
+      "type": "string"
+    },
+    "reviewer_email": {
+      "type": "string"
+    },
+    "reviewer_name": {
+      "type": "string"
+    },
+    "text": {
+      "type": "string"
+    },
+    "rating": {
+      "type": "number",
+      "minimum": 1,
+      "maximum": 5
+    }
+  },
+  "required": [
+    "reviewed_email",
+    "reviewer_email",
+    "rating"
+  ]
+}

@@ -1,0 +1,84 @@
+{
+  "name": "Call",
+  "type": "object",
+  "properties": {
+    "server_id": {
+      "type": "string"
+    },
+    "call_number": {
+      "type": "string"
+    },
+    "incident_id": {
+      "type": "string",
+      "description": "Unique incident identifier linking calls, units, and reports (e.g. INC-2026-000124)"
+    },
+    "type": {
+      "type": "string"
+    },
+    "priority": {
+      "type": "string",
+      "enum": [
+        "P1",
+        "P2",
+        "P3",
+        "P4"
+      ],
+      "default": "P3"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "pending",
+        "active",
+        "closed"
+      ],
+      "default": "pending"
+    },
+    "location": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "caller_info": {
+      "type": "string"
+    },
+    "assigned_units": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "notes": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "text": {
+            "type": "string"
+          },
+          "author": {
+            "type": "string"
+          },
+          "timestamp": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "department_type": {
+      "type": "string",
+      "enum": [
+        "police",
+        "fire",
+        "ems",
+        "all"
+      ]
+    }
+  },
+  "required": [
+    "server_id",
+    "type",
+    "location"
+  ]
+}

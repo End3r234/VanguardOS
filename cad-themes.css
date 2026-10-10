@@ -1,0 +1,248 @@
+/* ===== VanguardOS CAD Interface Themes ===== */
+/* Applied via wrapper class: .cad-tactical, .cad-eoc, .cad-cyber, .cad-firstresponder */
+
+/* ============================================================
+   1. TACTICAL (Military Command)
+   ============================================================ */
+.cad-tactical {
+  --tac-bg: #0a0a08;
+  --tac-surface: #14140f;
+  --tac-surface-2: #1a1a13;
+  --tac-border: #2e2e1e;
+  --tac-border-bright: #4a4a30;
+  --tac-text: #d8d8c0;
+  --tac-text-dim: #7a7a60;
+  --tac-amber: #c89500;
+  --tac-green: #6b7d3a;
+  --tac-green-bright: #8fa050;
+  --tac-red: #b03020;
+}
+.cad-tactical::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(120, 130, 80, 0.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(120, 130, 80, 0.045) 1px, transparent 1px);
+  background-size: 44px 44px;
+  pointer-events: none;
+  z-index: 0;
+}
+.cad-tactical > header {
+  background: #0f0f0a !important;
+  border-color: var(--tac-border) !important;
+  backdrop-filter: none !important;
+}
+.cad-tactical > main { position: relative; z-index: 1; }
+.cad-tactical .glass, .cad-tactical .glass-strong {
+  background: var(--tac-surface) !important;
+  backdrop-filter: none !important;
+  border: 1px solid var(--tac-border) !important;
+  border-radius: 5px !important;
+}
+.cad-tactical input, .cad-tactical textarea, .cad-tactical select {
+  background: var(--tac-surface-2) !important;
+  border: 1px solid var(--tac-border) !important;
+  color: var(--tac-text) !important;
+  border-radius: 5px !important;
+  font-family: 'Share Tech Mono', monospace !important;
+}
+.cad-tactical .text-white { color: var(--tac-text) !important; }
+.cad-tactical .text-white\/40, .cad-tactical .text-white\/35 { color: var(--tac-text-dim) !important; }
+.cad-tactical .text-white\/30, .cad-tactical .text-white\/25 { color: #5a5a45 !important; }
+.cad-tactical .text-white\/50, .cad-tactical .text-white\/55, .cad-tactical .text-white\/60 { color: #a0a080 !important; }
+.cad-tactical .text-white\/70, .cad-tactical .text-white\/80, .cad-tactical .text-white\/90 { color: #c0c0a0 !important; }
+.cad-tactical .bg-white\/\[0\.02\], .cad-tactical .bg-white\/\[0\.03\], .cad-tactical .bg-white\/\[0\.04\] { background: var(--tac-surface) !important; }
+.cad-tactical .bg-white\/\[0\.05\], .cad-tactical .bg-white\/\[0\.06\], .cad-tactical .bg-white\/\[0\.08\] { background: var(--tac-surface-2) !important; }
+.cad-tactical .border-white\/\[0\.06\], .cad-tactical .border-white\/\[0\.08\], .cad-tactical .border-white\/10 { border-color: var(--tac-border) !important; }
+.cad-tactical .text-crimson { color: var(--tac-amber) !important; }
+.cad-tactical .bg-crimson { background: var(--tac-amber) !important; color: #0a0a08 !important; }
+.cad-tactical .border-crimson { border-color: var(--tac-amber) !important; }
+.cad-tactical .bg-crimson\/10 { background: rgba(200, 149, 0, 0.12) !important; }
+.cad-tactical .bg-crimson\/20 { background: rgba(200, 149, 0, 0.18) !important; }
+.cad-tactical .border-crimson\/20, .cad-tactical .border-crimson\/30, .cad-tactical .border-crimson\/40 { border-color: rgba(200, 149, 0, 0.4) !important; }
+.cad-tactical .from-crimson { --tw-gradient-from: var(--tac-amber) !important; }
+.cad-tactical .to-crimson-dark { --tw-gradient-to: var(--tac-green) !important; }
+.cad-tactical .shadow-crimson\/20, .cad-tactical .shadow-crimson\/30 { box-shadow: 0 4px 20px rgba(200, 149, 0, 0.15) !important; }
+.cad-tactical .pulse-p1 { animation: tac-pulse 1.5s ease-in-out infinite !important; }
+@keyframes tac-pulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(176, 48, 32, 0.5); }
+  50% { box-shadow: 0 0 0 8px rgba(176, 48, 32, 0); }
+}
+.cad-tactical .font-mono-cad { font-family: 'Share Tech Mono', monospace !important; letter-spacing: 0.05em; }
+
+/* ============================================================
+   2. EMERGENCY OPERATIONS CENTER (EOC) — Light
+   ============================================================ */
+.cad-eoc {
+  --eoc-bg: #e8eaed;
+  --eoc-surface: #ffffff;
+  --eoc-surface-2: #f2f4f7;
+  --eoc-border: #c8ccd4;
+  --eoc-text: #1a2332;
+  --eoc-text-dim: #5a6478;
+  --eoc-navy: #1e3a5f;
+  --eoc-navy-light: #2d5485;
+  --eoc-red: #cc1a1a;
+  --eoc-orange: #d97700;
+}
+.cad-eoc > header {
+  background: #ffffff !important;
+  border-color: var(--eoc-navy) !important;
+  border-bottom-width: 2px !important;
+  backdrop-filter: none !important;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06) !important;
+}
+.cad-eoc .glass, .cad-eoc .glass-strong {
+  background: var(--eoc-surface) !important;
+  backdrop-filter: none !important;
+  border: 1px solid var(--eoc-border) !important;
+  border-radius: 10px !important;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06) !important;
+}
+.cad-eoc input, .cad-eoc textarea, .cad-eoc select {
+  background: var(--eoc-surface-2) !important;
+  border: 1px solid var(--eoc-border) !important;
+  color: var(--eoc-text) !important;
+  border-radius: 8px !important;
+}
+.cad-eoc .text-white { color: var(--eoc-text) !important; }
+.cad-eoc .text-white\/40, .cad-eoc .text-white\/35, .cad-eoc .text-white\/30, .cad-eoc .text-white\/25 { color: var(--eoc-text-dim) !important; }
+.cad-eoc .text-white\/45, .cad-eoc .text-white\/50, .cad-eoc .text-white\/55 { color: #4a5468 !important; }
+.cad-eoc .text-white\/60, .cad-eoc .text-white\/65 { color: #3a4458 !important; }
+.cad-eoc .text-white\/70, .cad-eoc .text-white\/80, .cad-eoc .text-white\/90 { color: var(--eoc-text) !important; }
+.cad-eoc .bg-white\/\[0\.02\], .cad-eoc .bg-white\/\[0\.03\], .cad-eoc .bg-white\/\[0\.04\] { background: var(--eoc-surface-2) !important; }
+.cad-eoc .bg-white\/\[0\.05\], .cad-eoc .bg-white\/\[0\.06\], .cad-eoc .bg-white\/\[0\.08\], .cad-eoc .bg-white\/10 { background: #e0e3e8 !important; }
+.cad-eoc .border-white\/\[0\.06\], .cad-eoc .border-white\/\[0\.08\], .cad-eoc .border-white\/10 { border-color: var(--eoc-border) !important; }
+.cad-eoc .bg-crimson { background: var(--eoc-red) !important; }
+.cad-eoc .text-crimson { color: var(--eoc-red) !important; }
+.cad-eoc .border-crimson { border-color: var(--eoc-red) !important; }
+.cad-eoc .bg-crimson\/10 { background: rgba(204, 26, 26, 0.08) !important; }
+.cad-eoc .bg-crimson\/20 { background: rgba(204, 26, 26, 0.12) !important; }
+.cad-eoc .border-crimson\/20, .cad-eoc .border-crimson\/30, .cad-eoc .border-crimson\/40 { border-color: rgba(204, 26, 26, 0.35) !important; }
+.cad-eoc .from-crimson { --tw-gradient-from: var(--eoc-red) !important; }
+.cad-eoc .to-crimson-dark { --tw-gradient-to: #8B0000 !important; }
+.cad-eoc .bg-\[\#110000\]\/95 { background: var(--eoc-navy) !important; }
+.cad-eoc .bg-\[\#0B0B0B\], .cad-eoc .bg-\[\#0f0f0f\], .cad-eoc .bg-\[\#111\], .cad-eoc .bg-\[\#1a1a1a\] { background: var(--eoc-surface) !important; }
+
+/* ============================================================
+   3. CYBER OPS (Futuristic)
+   ============================================================ */
+.cad-cyber {
+  --cy-bg: #08080f;
+  --cy-surface: rgba(0, 229, 255, 0.025);
+  --cy-surface-2: rgba(0, 229, 255, 0.05);
+  --cy-border: rgba(0, 229, 255, 0.18);
+  --cy-border-bright: rgba(0, 229, 255, 0.4);
+  --cy-text: #d0e8ff;
+  --cy-text-dim: #5a7090;
+  --cy-cyan: #00e5ff;
+  --cy-purple: #a855f7;
+  --cy-magenta: #ff00aa;
+  --cy-blue: #00aaff;
+}
+.cad-cyber::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background:
+    radial-gradient(circle at 20% 30%, rgba(168, 85, 247, 0.06), transparent 50%),
+    radial-gradient(circle at 80% 70%, rgba(0, 229, 255, 0.05), transparent 50%);
+  pointer-events: none;
+  z-index: 0;
+  animation: cy-drift 20s ease-in-out infinite alternate;
+}
+@keyframes cy-drift {
+  0% { transform: translate(0, 0); }
+  100% { transform: translate(-20px, 15px); }
+}
+.cad-cyber > header {
+  background: rgba(8, 8, 18, 0.85) !important;
+  border-color: var(--cy-border) !important;
+  backdrop-filter: blur(20px) !important;
+  box-shadow: 0 0 24px rgba(0, 229, 255, 0.08) !important;
+}
+.cad-cyber > main { position: relative; z-index: 1; }
+.cad-cyber .glass, .cad-cyber .glass-strong {
+  background: var(--cy-surface) !important;
+  backdrop-filter: blur(16px) !important;
+  border: 1px solid var(--cy-border) !important;
+  border-radius: 14px !important;
+  box-shadow: 0 0 20px rgba(0, 229, 255, 0.04), inset 0 1px 0 rgba(0, 229, 255, 0.06) !important;
+}
+.cad-cyber .glass:hover, .cad-cyber .glass-strong:hover {
+  border-color: var(--cy-border-bright) !important;
+  box-shadow: 0 0 28px rgba(0, 229, 255, 0.1) !important;
+}
+.cad-cyber input, .cad-cyber textarea, .cad-cyber select {
+  background: rgba(0, 229, 255, 0.03) !important;
+  border: 1px solid var(--cy-border) !important;
+  color: var(--cy-text) !important;
+  border-radius: 10px !important;
+  box-shadow: inset 0 0 8px rgba(0, 229, 255, 0.04) !important;
+}
+.cad-cyber input:focus, .cad-cyber textarea:focus, .cad-cyber select:focus {
+  border-color: var(--cy-cyan) !important;
+  box-shadow: 0 0 12px rgba(0, 229, 255, 0.3) !important;
+  outline: none !important;
+}
+.cad-cyber .text-crimson { color: var(--cy-cyan) !important; }
+.cad-cyber .bg-crimson { background: linear-gradient(135deg, var(--cy-cyan), var(--cy-purple)) !important; color: #08080f !important; }
+.cad-cyber .border-crimson { border-color: var(--cy-cyan) !important; }
+.cad-cyber .bg-crimson\/10 { background: rgba(0, 229, 255, 0.08) !important; }
+.cad-cyber .bg-crimson\/20 { background: rgba(0, 229, 255, 0.14) !important; }
+.cad-cyber .border-crimson\/20, .cad-cyber .border-crimson\/30, .cad-cyber .border-crimson\/40 { border-color: rgba(0, 229, 255, 0.4) !important; }
+.cad-cyber .from-crimson { --tw-gradient-from: var(--cy-cyan) !important; }
+.cad-cyber .to-crimson-dark { --tw-gradient-to: var(--cy-purple) !important; }
+.cad-cyber .shadow-crimson\/20, .cad-cyber .shadow-crimson\/30 { box-shadow: 0 0 24px rgba(0, 229, 255, 0.2) !important; }
+.cad-cyber .pulse-p1 { animation: cy-pulse 1.8s ease-in-out infinite !important; }
+@keyframes cy-pulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(255, 0, 170, 0.5), 0 0 12px rgba(255, 0, 170, 0.2); }
+  50% { box-shadow: 0 0 0 8px rgba(255, 0, 170, 0), 0 0 20px rgba(255, 0, 170, 0.4); }
+}
+.cad-cyber .bg-\[\#110000\]\/95 { background: rgba(8, 8, 18, 0.9) !important; }
+
+/* ============================================================
+   4. FIRST RESPONDER (Department-based accent colors)
+   ============================================================ */
+.cad-firstresponder {
+  --fr-bg: #0d0d0f;
+  --fr-surface: #161618;
+  --fr-border: #2a2a2e;
+  --fr-accent: #888899;
+  --fr-accent-soft: rgba(136, 136, 153, 0.15);
+}
+.cad-firstresponder[data-dept="police"] { --fr-accent: #3b82f6; --fr-accent-soft: rgba(59, 130, 246, 0.15); }
+.cad-firstresponder[data-dept="fire"] { --fr-accent: #ef4444; --fr-accent-soft: rgba(239, 68, 68, 0.15); }
+.cad-firstresponder[data-dept="ems"] { --fr-accent: #10b981; --fr-accent-soft: rgba(16, 185, 129, 0.15); }
+.cad-firstresponder[data-dept="dispatch"] { --fr-accent: #f59e0b; --fr-accent-soft: rgba(245, 158, 11, 0.15); }
+.cad-firstresponder[data-dept="neutral"] { --fr-accent: #888899; --fr-accent-soft: rgba(136, 136, 153, 0.15); }
+.cad-firstresponder > header {
+  background: var(--fr-bg) !important;
+  border-color: var(--fr-border) !important;
+  backdrop-filter: blur(16px) !important;
+}
+.cad-firstresponder > header::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--fr-accent), transparent);
+  opacity: 0.6;
+}
+.cad-firstresponder > header { position: relative; }
+.cad-firstresponder .text-crimson { color: var(--fr-accent) !important; }
+.cad-firstresponder .bg-crimson { background: var(--fr-accent) !important; }
+.cad-firstresponder .border-crimson { border-color: var(--fr-accent) !important; }
+.cad-firstresponder .bg-crimson\/10 { background: var(--fr-accent-soft) !important; }
+.cad-firstresponder .bg-crimson\/20 { background: var(--fr-accent-soft) !important; }
+.cad-firstresponder .border-crimson\/20, .cad-firstresponder .border-crimson\/30, .cad-firstresponder .border-crimson\/40 { border-color: var(--fr-accent) !important; }
+.cad-firstresponder .from-crimson { --tw-gradient-from: var(--fr-accent) !important; }
+.cad-firstresponder .to-crimson-dark { --tw-gradient-to: var(--fr-accent) !important; }
+.cad-firstresponder .shadow-crimson\/20, .cad-firstresponder .shadow-crimson\/30 { box-shadow: 0 4px 20px var(--fr-accent-soft) !important; }
+.cad-firstresponder .pulse-p1 { animation: fr-pulse 2s ease-in-out infinite !important; }
+@keyframes fr-pulse {
+  0%, 100% { box-shadow: 0 0 0 0 var(--fr-accent-soft); }
+  50% { box-shadow: 0 0 0 8px transparent; }
+}
+.cad-firstresponder .bg-\[\#110000\]\/95 { background: var(--fr-bg) !important; }

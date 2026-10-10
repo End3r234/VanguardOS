@@ -1,0 +1,102 @@
+{
+  "name": "IncidentReport",
+  "type": "object",
+  "properties": {
+    "server_id": {
+      "type": "string"
+    },
+    "report_number": {
+      "type": "string"
+    },
+    "incident_id": {
+      "type": "string",
+      "description": "Linked incident ID inherited from the dispatch call"
+    },
+    "call_id": {
+      "type": "string",
+      "description": "Reference to the dispatch call this report was created from"
+    },
+    "call_title": {
+      "type": "string",
+      "description": "Call type/title inherited from the linked call"
+    },
+    "dispatch_notes": {
+      "type": "string",
+      "description": "Notes from the dispatch call, inherited when creating a linked report"
+    },
+    "responding_units": {
+      "type": "string",
+      "description": "Comma-separated callsigns of units assigned to the linked call"
+    },
+    "primary_department": {
+      "type": "string",
+      "description": "Primary department type of the linked call"
+    },
+    "call_created_at": {
+      "type": "string",
+      "description": "ISO timestamp of when the linked call was created"
+    },
+    "report_type": {
+      "type": "string",
+      "enum": [
+        "arrest",
+        "use_of_force",
+        "traffic_stop",
+        "incident",
+        "fire",
+        "ems",
+        "supplement"
+      ]
+    },
+    "department_type": {
+      "type": "string",
+      "enum": [
+        "police",
+        "fire",
+        "ems"
+      ]
+    },
+    "author_email": {
+      "type": "string"
+    },
+    "author_callsign": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "draft",
+        "pending",
+        "approved",
+        "rejected"
+      ],
+      "default": "pending"
+    },
+    "title": {
+      "type": "string"
+    },
+    "narrative": {
+      "type": "string"
+    },
+    "location": {
+      "type": "string"
+    },
+    "involved_parties": {
+      "type": "string"
+    },
+    "supervisor_notes": {
+      "type": "string"
+    },
+    "extra_data": {
+      "type": "object",
+      "description": "Additional report-type-specific fields populated by the Smart Report Builder (driver info, vehicle info, charges, patient info, etc.)",
+      "properties": {}
+    }
+  },
+  "required": [
+    "server_id",
+    "author_email",
+    "report_type",
+    "department_type"
+  ]
+}

@@ -1,0 +1,61 @@
+{
+  "name": "IncidentEvent",
+  "type": "object",
+  "properties": {
+    "server_id": {
+      "type": "string",
+      "description": "Reference to server"
+    },
+    "incident_id": {
+      "type": "string",
+      "description": "Incident ID this event belongs to"
+    },
+    "call_id": {
+      "type": "string",
+      "description": "Call ID this event is associated with"
+    },
+    "event_type": {
+      "type": "string",
+      "enum": [
+        "created",
+        "unit_assigned",
+        "unit_unassigned",
+        "status_change",
+        "priority_change",
+        "note_added",
+        "report_submitted",
+        "report_approved",
+        "report_rejected",
+        "incident_closed",
+        "additional_unit"
+      ],
+      "description": "Type of incident event"
+    },
+    "description": {
+      "type": "string",
+      "description": "Human-readable event summary"
+    },
+    "actor_email": {
+      "type": "string",
+      "description": "Email of the user who triggered the event"
+    },
+    "actor_name": {
+      "type": "string",
+      "description": "Display name of the user who triggered the event"
+    },
+    "metadata": {
+      "type": "object",
+      "description": "Additional event-specific data (callsign, priority, status code, note text, etc.)",
+      "properties": {}
+    },
+    "timestamp": {
+      "type": "string",
+      "description": "ISO timestamp of when the event occurred"
+    }
+  },
+  "required": [
+    "server_id",
+    "incident_id",
+    "event_type"
+  ]
+}
